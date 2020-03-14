@@ -19,7 +19,7 @@ block content
       input(type="submit" value="Update Book")
 
       //- ================ DELETE ===============
-  form(action="/books/" + book.id + "/delete", method="post", onsubmit="return confirm('Delete? Really?');")
+  form(action="/books/" + book.id + "/delete", method="post", onsubmit="return confirm('Are you sure you want to delete?');")
     p
       a.button(href="/") Cancel
     input(type="submit" value="Delete Book")
