@@ -2,12 +2,7 @@ var express = require('express');
 var router = express.Router();
 const Book = require('../models').Book;
 
-
-/* GET home page. */
-/* router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-}); */
-// asyncHander function
+/* asyncHander function */
 function asyncHandler(cb){
 
     return async(req, res, next) => {
@@ -20,26 +15,28 @@ function asyncHandler(cb){
     }
   }
 
-  // redirect to books
-  // router.get('/', (req, res) => {
-  //   res.redirect("/books")
-  // });
-
-  // gets all of the books by year
+  /* gets all of the books sorted by last updated */
   router.get('/', asyncHandler(async (req,res)=>{
-    const books = await Book.findAll({ order: [['year', 'ASC']]})
+    const books = await Book.findAll({ order: [['updatedAt', 'DESC']]})
      res.render("index", {books})
 
   })
-  );
+);
 
-  //  new book form
+/* Shows the full list of books */
+router.get('/books', asyncHandler(async (req,res)=>{
+  const books = await Book.findAll({ order: [['updatedAt', 'DESC']]})
+   res.render("index", {books})
+
+})
+);
+
+  /*  Shows the create new book form */
   router.get('/new', asyncHandler(async (req, res) =>{
       res.render("new-book", { book: { } })
   })) ;
 
-// post new book
-
+/* Posts a new book */
 router.post('/books/new' , asyncHandler(async(req, res) => {
   let book;
  try {
@@ -56,7 +53,7 @@ router.post('/books/new' , asyncHandler(async(req, res) => {
   }
 ));
 
-/// shows book detail form
+/* Shows book detail form */
 router.get('/books/:id', asyncHandler(async (req, res, next) => {
     Book.findByPk(req.params.id)
     .then(function(book){
@@ -71,7 +68,7 @@ router.get('/books/:id', asyncHandler(async (req, res, next) => {
             }
                  ))
 
-  // update book
+  /* Updates book */
 router.post('/books/:id', asyncHandler(async (req, res) => {
     let book;
     try {
@@ -92,7 +89,7 @@ router.post('/books/:id', asyncHandler(async (req, res) => {
         })
           )
 
-// delete book
+/* Deletes a book */
 router.post('/books/:id/delete', asyncHandler(async(req, res, next) => {
      book = await Book.findByPk(req.params.id)
     if(book){

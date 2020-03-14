@@ -15,7 +15,7 @@ const sequelize = new Sequelize({
   storage: 'library.db'
 });
 
-// async IIFE
+/* async */
 (async () => {
     try {
         await sequelize.authenticate();
@@ -26,7 +26,7 @@ const sequelize = new Sequelize({
     }
 })();
 
-// view engine setup
+/* view engine setup */
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
@@ -45,7 +45,7 @@ app.use( (req, res, next) => {
   next(createError(404));
 });
 
-// error handler
+/* error handler */
 app.use(function(err, req, res, next) {
 
   res.locals.message = err.message;

@@ -5,7 +5,16 @@
   "scripts": {
     "start": "node ./bin/www"
   },
-
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rklimek-26/unit_8.2.git"
+  },
+  "author": "Rachel K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rklimek-26/unit_8.2/issues"
+  },
+  "homepage": "https://github.com/rklimek-26/unit_8.2#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -13,7 +22,8 @@
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.1",
-    "sequelize": "^2.0.0-rc8",
+    "pug": "^2.0.4",
+    "sequelize": "^5.21.5",
     "sequelize-cli": "^5.5.1",
     "sqlite3": "^4.1.1"
   }
