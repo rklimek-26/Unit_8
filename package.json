@@ -1,5 +1,5 @@
 {
-  "name": "unit-8.2",
+  "name": "unit-8",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rklimek-26/unit_8.2.git"
+    "url": "git+https://github.com/rklimek-26/unit_8.git"
   },
   "author": "Rachel K",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rklimek-26/unit_8.2/issues"
+    "url": "https://github.com/rklimek-26/unit_8/issues"
   },
-  "homepage": "https://github.com/rklimek-26/unit_8.2#readme",
+  "homepage": "https://github.com/rklimek-26/unit_8#readme",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
